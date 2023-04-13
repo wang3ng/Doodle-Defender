@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6685722290812940161}
   - component: {fileID: 172478699088400046}
   - component: {fileID: 1838395625875047234}
+  - component: {fileID: 3768213463054702758}
   m_Layer: 5
   m_Name: TurretButton
   m_TagString: Untagged
@@ -260,6 +261,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3768213463054702758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864546339774201631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6920e91456c5647a58a81bf567e26895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedType: {fileID: 0}
+  canvas: {fileID: 0}
+  scrollGroup: {fileID: 0}
 --- !u!1 &5247515474950288399
 GameObject:
   m_ObjectHideFlags: 0
