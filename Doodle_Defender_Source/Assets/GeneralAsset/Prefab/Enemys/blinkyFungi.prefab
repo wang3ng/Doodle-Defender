@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3581208977058017913}
   - component: {fileID: 3581208977058017912}
   - component: {fileID: 6881974524817800794}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: blinkyFungi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -119,6 +119,7 @@ MonoBehaviour:
   health: 10
   slowness: 0
   slownessCounter: 0
+  gotHit: 0
   anim: {fileID: 0}
   target: {fileID: 0}
 --- !u!195 &3581208977058017919

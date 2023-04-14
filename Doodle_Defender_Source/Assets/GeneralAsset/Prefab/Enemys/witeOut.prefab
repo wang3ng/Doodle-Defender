@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 7149175341035867129}
   - component: {fileID: 1136258074472073365}
   - component: {fileID: 196211659005703643}
-  m_Layer: 0
-  m_Name: bunnyBarrel
+  - component: {fileID: 8173077917195532456}
+  m_Layer: 6
+  m_Name: witeOut
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 2514218923718084646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.13, y: 2.59, z: -11.31}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1fa57d95466449269830d3292d191e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4599bd1eb852b4e14b1955516eddf098, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,11 +115,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 10
-  moveSpeed: 20
-  health: 10
+  moveSpeed: 14
+  health: 80
   slowness: 0
   slownessCounter: 0
-  anim: {fileID: 0}
+  gotHit: 0
+  anim: {fileID: 8173077917195532456}
   target: {fileID: 0}
 --- !u!195 &7149175341035867129
 NavMeshAgent:
@@ -133,7 +135,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 3
   avoidancePriority: 50
-  m_AngularSpeed: 20
+  m_AngularSpeed: 10
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -171,3 +173,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!95 &8173077917195532456
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2514218923718084646}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 50014e7efd6404e43b34708326dc6295, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
