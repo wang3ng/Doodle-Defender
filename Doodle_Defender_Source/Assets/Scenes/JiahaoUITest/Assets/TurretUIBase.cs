@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 //Draggable Turret UI
 [RequireComponent(typeof(RectTransform))]
-public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
+public class TurretUIBase : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
 
