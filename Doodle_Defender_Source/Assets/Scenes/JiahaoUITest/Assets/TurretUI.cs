@@ -1,42 +1,66 @@
-
 using UnityEngine;
 using UnityEngine.EventSystems;
+
 
 //Draggable Turret UI
 [RequireComponent(typeof(RectTransform))]
 public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+    
+
+    [Header("The TurretUI is the UI element script in which \n the player will drag and drop to spawn an actual turret")]
+    [Header("The TurretSelect controls the button in the turret \n inventory, in which the information of that turret type is stored.")]
+    public GameObject turretSelectBase; //the turretSelect gameobejct that's paired with this turretUI
+
+    //the turretSelect componenet that's paired with this turretUI
+    [HideInInspector]public TurretSelect turretSelect;
+
+    //this transform
     private RectTransform rectTransform;
 
-    public GameObject selectedType;
-    public GameObject canvas;
+    [HideInInspector]public GameObject selectedType;
+
+    [HideInInspector]public GameObject canvas;
     public GameObject scrollGroup; //The group of UI turrets 
 
+    private Vector2 startPos;
+    
     private void Start()
     {
+        
         rectTransform = GetComponent<RectTransform>();
+        turretSelect = turretSelectBase.GetComponent<TurretSelect>();
+        selectedType = turretSelect.turretPrefab;
+
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        scrollGroup = GameObject.Find("TurretContent");
+
+        startPos = this.transform.localPosition;
+
     }
 
+    
     public void OnDrag(PointerEventData eventData)
     {
-
+        Debug.Log("Ondrag");
         this.transform.SetParent(canvas.transform);
 
         this.transform.position = eventData.position;
         
     }
 
+
+    
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!TurretPlacement())
-        {
-            this.transform.SetParent(scrollGroup.transform);
-        }
+        TurretPlacement();
+        this.transform.SetParent(turretSelectBase.transform);
+        this.transform.localPosition = startPos;
     }
 
 
     // Update is called once per frame
-    bool TurretPlacement()
+    void TurretPlacement()
     {
         //Placement of the turret
         RaycastHit hit;
@@ -55,16 +79,9 @@ public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
                     hit.transform.gameObject.GetComponent<turretBase>().occupied = true;
 
                     //Destroy the this UI element after a turret is placed down
-                    Destroy(this.gameObject);
-                    return true;
+                    //Destroy(this.gameObject);
                 }
-                return false;
             }
-            return false;
-        }
-        else
-        {
-            return false;
         }
 
     }

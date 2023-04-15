@@ -35,11 +35,11 @@ public class CursorManager : MonoBehaviour
         // Start is called before the first frame update
         void Start()
     {
-#if UNITY_WEBGL
-        Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.ForceSoftware);
-#else
-        Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
-#endif
+        #if UNITY_WEBGL
+                Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.ForceSoftware);
+        #else
+                Cursor.SetCursor(cursorTexture, hotSpot, cursorMode);
+        #endif
 
     }
 
@@ -66,30 +66,35 @@ public class CursorManager : MonoBehaviour
                     SoundManager.Instance.sdHit.Play();
                 }
 
-                if (hit.transform.CompareTag("turretBase"))
-                {
-                    if (hit.transform.gameObject.GetComponent<turretBase>().occupied == false)
-                    {
+                // This is the old version of turret spawning. The new drag and drop method is in replacement.
+                //if (hit.transform.CompareTag("turretBase"))
+                //{
+                //    if (hit.transform.gameObject.GetComponent<turretBase>().occupied == false)
+                //    {
 
-                        var b = selectedTurretButton.GetComponent<turretButton>();
-                        if (selectedType != null && b.amount>0)
-                        {
-                            var a = Instantiate(selectedType, hit.transform.position, transform.rotation);
-                            //Decrease the amount of the turret in the inventory by 1, if 0, trigger it so it disables
+                //        var b = selectedTurretButton.GetComponent<turretButton>();
+                //        if (selectedType != null && b.amount>0)
+                //        {
+                //            var a = Instantiate(selectedType, hit.transform.position, transform.rotation);
+                //            //Decrease the amount of the turret in the inventory by 1, if 0, trigger it so it disables
                             
-                            b.amount -= 1;
-                            if (b.amount <= 0)
-                            {
-                                b.onSelected();
-                                Debug.Log("onSelectedTriggered");
-                            }
-                            hit.transform.gameObject.GetComponent<turretBase>().occupied = true;
-                        }
+                //            b.amount -= 1;
+                //            if (b.amount <= 0)
+                //            {
+                //                b.onSelected();
+                //                Debug.Log("onSelectedTriggered");
+                //            }
+                //            hit.transform.gameObject.GetComponent<turretBase>().occupied = true;
+                //        }
                         
-                    }
-                }
+                //    }
+                //}
 
             }
         }
     }
+
+
+
+
 }
