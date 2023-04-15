@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 
 //Draggable Turret UI
@@ -45,7 +46,11 @@ public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
         Debug.Log("Ondrag");
         this.transform.SetParent(canvas.transform);
 
+        
+        
+
         this.transform.position = eventData.position;
+
         
     }
 

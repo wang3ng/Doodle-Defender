@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class LookingAtCamera : MonoBehaviour
 {
     protected Transform targetToLook;
+    public bool Flip;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -14,6 +16,13 @@ public class LookingAtCamera : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        transform.LookAt(targetToLook);
+        if (Flip)
+        {
+            transform.LookAt(2 * transform.position - targetToLook.transform.position);
+        }
+        else
+        {
+            transform.LookAt(targetToLook);
+        }
     }
 }

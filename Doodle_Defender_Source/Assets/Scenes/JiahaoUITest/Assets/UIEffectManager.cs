@@ -9,7 +9,8 @@ public class UIEffectManager : MonoBehaviour
 
     public static UIEffectManager Instance;
 
-
+    public Vector3 fadeFromPos;
+    public Vector3 fadeToPos;
     public float fadeTime = 1f;
     public CanvasGroup targetObject;
     public RectTransform rectTransform;
@@ -31,8 +32,8 @@ public class UIEffectManager : MonoBehaviour
     public void FadeIn()
     {
         targetObject.alpha = 0f;
-        rectTransform.transform.localPosition = new Vector3(0f, -1000f, 0f);
-        rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(Ease.OutElastic,0f,1.2f);
+        rectTransform.transform.localPosition = fadeFromPos;
+        rectTransform.DOAnchorPos(new Vector3(0f, 0f,0f), fadeTime, false).SetEase(Ease.OutElastic,0f,1.2f);
         targetObject.DOFade(1, fadeTime);
     }
 
@@ -40,7 +41,7 @@ public class UIEffectManager : MonoBehaviour
     {
         targetObject.alpha = 1f;
         rectTransform.transform.localPosition = new Vector3(0f, 0f, 0f);
-        rectTransform.DOAnchorPos(new Vector2(0f, -1000f), fadeTime, false).SetEase(Ease.InOutQuint,0f,1.2f);
+        rectTransform.DOAnchorPos(fadeToPos, fadeTime, false).SetEase(Ease.InOutQuint,0f,1.2f);
         targetObject.DOFade(0, fadeTime);
     }
 
