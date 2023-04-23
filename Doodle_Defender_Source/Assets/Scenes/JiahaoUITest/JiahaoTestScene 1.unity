@@ -481,10 +481,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4476924649338045101, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5157530348023349156, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
       propertyPath: turretPrefab
       value: 
       objectReference: {fileID: 5284934693451897172, guid: 01b994910b326467db50886b84fe0a38, type: 3}
+    - target: {fileID: 5410920242612930781, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6821907983487556718, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -700,11 +708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5de682d4733451c935dbaf48f8ed0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeFromPos: {x: -100, y: 1000, z: 0}
-  fadeToPos: {x: -100, y: -1000, z: 0}
-  fadeTime: 1
-  targetObject: {fileID: 1539721976}
-  rectTransform: {fileID: 1539721975}
 --- !u!4 &262287793
 Transform:
   m_ObjectHideFlags: 0
@@ -912,10 +915,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4476924649338045101, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5157530348023349156, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
       propertyPath: turretPrefab
       value: 
       objectReference: {fileID: 3994241503361548701, guid: ef54a0179a99b40668461ca8b3c12118, type: 3}
+    - target: {fileID: 5410920242612930781, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6821907983487556718, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2722,6 +2733,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1941203133}
     m_Modifications:
+    - target: {fileID: 917399170856865594, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1864546339774201631, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
       propertyPath: m_Name
       value: TurretButton
@@ -2841,6 +2856,14 @@ PrefabInstance:
     - target: {fileID: 4093498810169820802, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4476924649338045101, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5410920242612930781, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ed1cfc9164bb44a3a5d86c138d93c54, type: 3}

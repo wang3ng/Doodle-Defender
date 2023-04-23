@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
-
+using UnityEngine.UI;
 
 //Draggable Turret UI
 [RequireComponent(typeof(RectTransform))]
@@ -22,21 +22,25 @@ public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
     [HideInInspector]public GameObject selectedType;
 
     [HideInInspector]public GameObject canvas;
+    [HideInInspector] public GameObject overlayCanvas;
     public GameObject scrollGroup; //The group of UI turrets 
 
     private Vector2 startPos;
+    private Vector2 startScale;
     
     private void Start()
     {
-        
+        Debug.Log("this turret ui is working");
         rectTransform = GetComponent<RectTransform>();
         turretSelect = turretSelectBase.GetComponent<TurretSelect>();
         selectedType = turretSelect.turretPrefab;
 
-        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        canvas = GameObject.Find("Canvas");
+        overlayCanvas = GameObject.Find("OverlayCanvas");
         scrollGroup = GameObject.Find("TurretContent");
 
         startPos = this.transform.localPosition;
+        startScale = this.transform.localScale;
 
     }
 
@@ -44,10 +48,14 @@ public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         Debug.Log("Ondrag");
-        this.transform.SetParent(canvas.transform);
+        Vector3 pos = Camera.main.WorldToScreenPoint(this.transform.position);
+        transform.SetParent(overlayCanvas.transform, false);
+        transform.position = pos;
 
-        
-        
+        transform.localScale = new Vector2(0.2f,0.2f);
+
+
+
 
         this.transform.position = eventData.position;
 
@@ -59,8 +67,13 @@ public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
     public void OnEndDrag(PointerEventData eventData)
     {
         TurretPlacement();
-        this.transform.SetParent(turretSelectBase.transform);
+        this.transform.SetParent(turretSelectBase.transform,false);
+
+
+
         this.transform.localPosition = startPos;
+        this.transform.localScale = startScale;
+        
     }
 
 
