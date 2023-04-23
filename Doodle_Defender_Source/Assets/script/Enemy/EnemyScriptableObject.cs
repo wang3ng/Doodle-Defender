@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Enemy", menuName = "Enemies", order = 1)]
+[CreateAssetMenu(fileName = "New Enemy", menuName = "Enemies", order = 1)] //set up menus
 public class EnemyScriptableObject : ScriptableObject
 {
     //NavMeshAgent nav;
@@ -15,13 +15,13 @@ public class EnemyScriptableObject : ScriptableObject
     public float health; //total health
 
     //previously [hideininspector], can be hidden again if necessary 
-    public bool slowness = false;
-    public float slownessCounter = 0;
+    //public bool isSlowed = false; //previously 'slowness' 
+    //public float slowedCount = 0; //tracks time enemy's been slowed for, previously 'slownessCounter'
 
-    public bool slownessTrigger = false;
-    public float slownessTotalTime = 3; //i feel like this could be moved somewhere else or just implemented into slownessCounter or something. we'll see
-    public float slownessStrength = 0.7f;
-    public bool gotHit;
+    //public bool slownessTrigger = false;
+    public float slowedLimit = 3; //upper limit on time enemy is slowed for, previously 'slownessTotalTime' 
+    public float slowStrength = 0.7f; //how strongly slowed 
+    //public bool gotHit;
 
     [SerializeField]
     Animator anim;
