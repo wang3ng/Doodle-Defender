@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -611,6 +611,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseFrame: {fileID: 1437372455}
+  levelTime: 0
+  usingTimer: 0
+  turret2: {fileID: 0}
+  turret3: {fileID: 0}
+  turret5: {fileID: 0}
+  currentLevel: 0
+  turretsForThisLevel: []
+  turretInventory: []
+  preLevelCanvas: {fileID: 0}
+  turretSelectedContent: {fileID: 0}
+  turretInventoryContent: {fileID: 0}
+  timerTxt: {fileID: 0}
 --- !u!4 &280338652
 Transform:
   m_ObjectHideFlags: 0

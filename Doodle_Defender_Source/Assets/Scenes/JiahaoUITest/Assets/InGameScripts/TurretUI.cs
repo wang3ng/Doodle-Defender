@@ -52,7 +52,7 @@ public class TurretUI : MonoBehaviour, IDragHandler, IEndDragHandler
         transform.SetParent(overlayCanvas.transform, false);
         transform.position = pos;
 
-        transform.localScale = new Vector2(0.2f,0.2f);
+        transform.localScale = new Vector2(0.4f,0.4f);
 
 
 
